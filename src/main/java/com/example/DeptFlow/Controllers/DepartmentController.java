@@ -9,12 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.DeptFlow.Models.Department;
+import com.example.DeptFlow.Models.Employee;
 import com.example.DeptFlow.Service.DepartmentService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
-
-
 
 
 @RestController 
@@ -46,17 +45,35 @@ public class DepartmentController {
       return ResponseEntity.ok(dept);
     }
 
-
-    @PutMapping("/{id}")
-    public String putMethodName(@PathVariable Long id, @RequestBody Department entity) {
-       Department dept =  departmentService.updateDepartment(id, entity);
-       if(dept ==  null){
-           return "Department Not Found";
-       }
-        return "Department updated successfully";
+    @GetMapping("{id}/employees")
+    public ResponseEntity<Iterable<Employee>> getEmployeesByDepartmentId(@PathVariable Long id) {
+        Iterable<Employee> employees = departmentService.getEmployeeWithId(id);
+        if (employees == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        return ResponseEntity.ok(employees);
     }
 
+    @PostMapping("{id}/employees")
+    public ResponseEntity<Employee> postEmployeesByDepartmentId(@PathVariable Long id, @RequestBody Employee employee) {
+        Employee employees = departmentService.saveEmployeeWithID(id, employee);
+        if (employees == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        return ResponseEntity.ok(employees);
+    }
+    
 
+    @PutMapping("/{id}")
+    public ResponseEntity<String> updateEmployee(@PathVariable Long id, @RequestBody Department entity) {
+       Department dept =  departmentService.updateDepartment(id, entity);
+       if(dept ==  null){
+           return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+       }
+        return ResponseEntity.ok(dept).ok("Department updated successfully");
+    }
+
+    
     @DeleteMapping("/{id}")
     public String deleteDepartment(@PathVariable Long id){
         Department dept = departmentService.deleteDepartment(id);

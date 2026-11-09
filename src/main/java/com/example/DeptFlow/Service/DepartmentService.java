@@ -1,7 +1,9 @@
 package com.example.DeptFlow.Service;
 
 import com.example.DeptFlow.Models.Department;
+import com.example.DeptFlow.Models.Employee;
 import com.example.DeptFlow.Repository.DepartmentRepository;
+import com.example.DeptFlow.Repository.EmployeeRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +14,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class DepartmentService {
     private DepartmentRepository departmentRepository;
+    private EmployeeService employeeService;
 
-    public DepartmentService(DepartmentRepository departmentRepository) {
+    public DepartmentService(DepartmentRepository departmentRepository , EmployeeService employeeService) {
         this.departmentRepository = departmentRepository;
+        this.employeeService = employeeService;
     }
 
     public void saveDepartment(Department department) {
@@ -60,5 +64,22 @@ public class DepartmentService {
         Department department = dept.get();
         departmentRepository.delete(department);
         return department;
+    }
+
+    public Iterable<Employee> getEmployeeWithId(Long id){
+        Optional<Department> dept = departmentRepository.findById(id);
+        if(dept.isEmpty()){
+            return null;
+        }
+        return employeeService.findbyEmpId(id);
+    }
+
+    public Employee saveEmployeeWithID(Long Id , Employee employee){
+        Optional<Department> department = departmentRepository.findById(Id);
+        if(department.isEmpty()){
+            return null;
+        }
+        employee.setDepartment(department.get());
+        return employeeService.saveEmployee(employee);
     }
 }

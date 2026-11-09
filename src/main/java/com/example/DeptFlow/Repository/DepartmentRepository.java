@@ -3,7 +3,10 @@ package com.example.DeptFlow.Repository;
 import java.util.*;
 
 import com.example.DeptFlow.Models.Department;
+import com.example.DeptFlow.Models.Employee;
+
 import org.springframework.stereotype.Repository;
+import org.hibernate.bytecode.internal.bytebuddy.ByteBuddyState.ProxyDefinitionHelpers;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
