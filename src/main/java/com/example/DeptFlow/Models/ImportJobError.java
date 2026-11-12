@@ -23,7 +23,7 @@ public class ImportJobError{
     public Long getImportId(){
         return importJob.getId();
     }
-    int lineNo;
+    Long lineNo;
     String rawLine;
     String reason;
 }
