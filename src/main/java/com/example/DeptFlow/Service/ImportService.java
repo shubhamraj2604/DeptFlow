@@ -10,6 +10,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -19,7 +21,6 @@ import org.springframework.stereotype.Service;
 import com.example.DeptFlow.Models.Department;
 import com.example.DeptFlow.Models.Employee;
 import com.example.DeptFlow.Models.ImportJob;
-import com.example.DeptFlow.Models.ImportJobError;
 
 @Service
 public class ImportService {
@@ -27,6 +28,7 @@ public class ImportService {
     private final EmployeeService employeeService;
     private final DepartmentService departmentService;
     private final ImportJobErrorService importJobErrorService;
+    private static final Logger LOGGER = LoggerFactory.getLogger(ImportService.class);
 
     public ImportService(EmployeeService employeeService, DepartmentService departmentService,
             ImportJobRepoService importJobRepoService, ImportJobErrorService importJobErrorService) {
@@ -34,6 +36,11 @@ public class ImportService {
         this.employeeService = employeeService;
         this.departmentService = departmentService;
         this.importJobRepoService = importJobRepoService;
+    }
+
+    public void updateProgress(ImportJob importJob) {
+        importJob.setProcessed_rows(importJob.getFailure_count() + importJob.getSuccess_count());
+        importJobRepoService.saveImportData(importJob);
     }
 
     public void importEmployees(String fileName) throws IOException {
@@ -54,13 +61,18 @@ public class ImportService {
             importJob.setTotal_rows(records.size());
             importJobRepoService.saveImportData(importJob);
 
+            LOGGER.info("Starting import for file: {}", fileName);
+            LOGGER.info("Total CSV rows: {}", records.size());
+
             // traverse through the csv file
             List<Employee> employees = new ArrayList<>();
             for (CSVRecord record : records) {
+                LOGGER.info(
+                        "Processing row {}/{}",
+                        record.getRecordNumber(),
+                        importJob.getTotal_rows());
                 String deptCode = record.get("department_code");
                 Department department = departmentService.deptPresent(deptCode);
-
-
 
                 if (department == null) {
                     importJobErrorService.saveError(
@@ -69,11 +81,18 @@ public class ImportService {
                             record.toString(),
                             "Department with code " + deptCode + " does not exist.");
                     System.out.println("Department with code " + deptCode + " does not exist.");
+                    LOGGER.warn(
+                            "Row {} failed. Success: {}, Failures: {}, Processed: {}",
+                            record.getRecordNumber(),
+                            importJob.getSuccess_count(),
+                            importJob.getFailure_count(),
+                            importJob.getProcessed_rows());
                     importJob.setFailure_count(importJob.getFailure_count() + 1);
-                    // throw new IllegalArgumentException("Department with code " + deptCode + " does not exist.");
+                    updateProgress(importJob);
+                    // throw new IllegalArgumentException("Department with code " + deptCode + "
+                    // does not exist.");
                     continue;
                 }
-
 
                 String firstName = record.get("first_name");
                 String lastName = record.get("last_name");
@@ -85,11 +104,10 @@ public class ImportService {
                             record.toString(),
                             "Employee with email " + email + " already exists.");
                     importJob.setFailure_count(importJob.getFailure_count() + 1);
+                    updateProgress(importJob);
                     System.out.println("Employee with email " + email + " already exists. Skipping this record.");
                     continue; // Skip this record and move to the next one
                 }
-
-
 
                 String phone = record.get("phone");
                 if (phone == null || phone.length() != 10 || employeeService.validPhoneNumber(phone)) {
@@ -99,11 +117,10 @@ public class ImportService {
                             record.toString(),
                             "Phone number " + phone + " is not valid.");
                     importJob.setFailure_count(importJob.getFailure_count() + 1);
+                    updateProgress(importJob);
                     System.out.println("Phone number " + phone + " is not valid. Skipping this record.");
                     continue; // Skip this record and move to the next one
                 }
-
-
 
                 String designation = record.get("designation");
                 String date = record.get("date_of_joining");
@@ -123,15 +140,29 @@ public class ImportService {
                 employees.add(employee);
                 // importJobErrorService.save(importJobError);
                 importJob.setSuccess_count(importJob.getSuccess_count() + 1);
+                updateProgress(importJob);
+                LOGGER.info(
+                        "Row {} imported successfully. Success: {}, Failures: {}, Processed: {}",
+                        record.getRecordNumber(),
+                        importJob.getSuccess_count(),
+                        importJob.getFailure_count(),
+                        importJob.getProcessed_rows());
             }
-
 
             employeeService.saveAll(employees);
             importJob.setStatus("COMPLETED");
             importJob.setProcessed_rows(importJob.getSuccess_count() + importJob.getFailure_count());
-            importJob.setError_message(importJob.getFailure_count() > 0 ? "Some records failed to import. Please check the error log." : null);
+            importJob.setError_message(
+                    importJob.getFailure_count() > 0 ? "Some records failed to import. Please check the error log."
+                            : null);
             importJob.setCompleted_at(LocalDateTime.now());
             importJobRepoService.saveImportData(importJob);
+            LOGGER.info(
+                    "Import completed. Total: {}, Processed: {}, Success: {}, Failures: {}",
+                    importJob.getTotal_rows(),
+                    importJob.getProcessed_rows(),
+                    importJob.getSuccess_count(),
+                    importJob.getFailure_count());
         }
     }
 }

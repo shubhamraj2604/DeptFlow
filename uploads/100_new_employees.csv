@@ -1,0 +1,101 @@
+department_code,first_name,last_name,email,phone,designation,date_of_joining
+IT,Aarav,Nair,aarav.nair.001@example.com,7000000000,Software Engineer,2026-01-01
+HR,Vivaan,Malhotra,vivaan.malhotra.002@example.com,7000007919,HR Executive,2026-01-04
+Finance,Aditya,Rao,aditya.rao.003@example.com,7000015838,Accountant,2026-01-07
+IT,Vihaan,Khan,vihaan.khan.004@example.com,7000023757,Backend Developer,2026-01-10
+HR,Arjun,Patel,arjun.patel.005@example.com,7000031676,Talent Acquisition Specialist,2026-01-13
+Finance,Reyansh,Chatterjee,reyansh.chatterjee.006@example.com,7000039595,Financial Analyst,2026-01-16
+IT,Atharv,Saxena,atharv.saxena.007@example.com,7000047514,Frontend Developer,2026-01-19
+HR,Krishna,Desai,krishna.desai.008@example.com,7000055433,Recruiter,2026-01-22
+Finance,Ishaan,Ghosh,ishaan.ghosh.009@example.com,7000063352,Payroll Specialist,2026-01-25
+IT,Shaurya,Mehta,shaurya.mehta.010@example.com,7000071271,QA Engineer,2026-02-28
+HR,Anaya,Fernandes,anaya.fernandes.011@example.com,7000079190,HR Coordinator,2026-02-03
+Finance,Diya,Verma,diya.verma.012@example.com,7000087109,Finance Associate,2026-02-06
+IT,Aadhya,Jain,aadhya.jain.013@example.com,7000095028,DevOps Engineer,2026-02-09
+HR,Saanvi,Iyer,saanvi.iyer.014@example.com,7000102947,People Operations Associate,2026-02-12
+Finance,Myra,Menon,myra.menon.015@example.com,7000110866,Accounts Executive,2026-02-15
+IT,Ira,Bhat,ira.bhat.016@example.com,7000118785,Database Administrator,2026-02-18
+HR,Anvi,Thomas,anvi.thomas.017@example.com,7000126704,Training Specialist,2026-02-21
+Finance,Kiara,Reddy,kiara.reddy.018@example.com,7000134623,Audit Analyst,2026-02-24
+IT,Riya,Bose,riya.bose.019@example.com,7000142542,Systems Analyst,2026-03-27
+HR,Aarohi,Pillai,aarohi.pillai.020@example.com,7000150461,HR Executive,2026-03-02
+Finance,Rohan,Sengupta,rohan.sengupta.021@example.com,7000158380,Accountant,2026-03-05
+IT,Neha,Sharma,neha.sharma.022@example.com,7000166299,Software Engineer,2026-03-08
+HR,Kunal,Kulkarni,kunal.kulkarni.023@example.com,7000174218,Talent Acquisition Specialist,2026-03-11
+Finance,Pooja,Kapoor,pooja.kapoor.024@example.com,7000182137,Financial Analyst,2026-03-14
+IT,Manav,Mishra,manav.mishra.025@example.com,7000190056,Backend Developer,2026-03-17
+HR,Simran,Sinha,simran.sinha.026@example.com,7000197975,Recruiter,2026-03-20
+Finance,Yash,Gupta,yash.gupta.027@example.com,7000205894,Payroll Specialist,2026-03-23
+IT,Kavya,Das,kavya.das.028@example.com,7000213813,Frontend Developer,2026-04-26
+HR,Dev,Joshi,dev.joshi.029@example.com,7000221732,HR Coordinator,2026-04-01
+Finance,Tanya,Mukherjee,tanya.mukherjee.030@example.com,7000229651,Finance Associate,2026-04-04
+IT,Nikhil,Nair,nikhil.nair.031@example.com,7000237570,QA Engineer,2026-04-07
+HR,Sakshi,Malhotra,sakshi.malhotra.032@example.com,7000245489,People Operations Associate,2026-04-10
+Finance,Varun,Rao,varun.rao.033@example.com,7000253408,Accounts Executive,2026-04-13
+IT,Ishita,Khan,ishita.khan.034@example.com,7000261327,DevOps Engineer,2026-04-16
+HR,Rahul,Patel,rahul.patel.035@example.com,7000269246,Training Specialist,2026-04-19
+Finance,Meera,Chatterjee,meera.chatterjee.036@example.com,7000277165,Audit Analyst,2026-04-22
+IT,Kabir,Saxena,kabir.saxena.037@example.com,7000285084,Database Administrator,2026-05-25
+HR,Nisha,Desai,nisha.desai.038@example.com,7000293003,HR Executive,2026-05-28
+Finance,Ritvik,Ghosh,ritvik.ghosh.039@example.com,7000300922,Accountant,2026-05-03
+IT,Tanvi,Mehta,tanvi.mehta.040@example.com,7000308841,Systems Analyst,2026-05-06
+HR,Siddharth,Fernandes,siddharth.fernandes.041@example.com,7000316760,Talent Acquisition Specialist,2026-05-09
+Finance,Avni,Verma,avni.verma.042@example.com,7000324679,Financial Analyst,2026-05-12
+IT,Harsh,Jain,harsh.jain.043@example.com,7000332598,Software Engineer,2026-05-15
+HR,Mira,Iyer,mira.iyer.044@example.com,7000340517,Recruiter,2026-05-18
+Finance,Pranav,Menon,pranav.menon.045@example.com,7000348436,Payroll Specialist,2026-05-21
+IT,Aisha,Bhat,aisha.bhat.046@example.com,7000356355,Backend Developer,2026-06-24
+HR,Dhruv,Thomas,dhruv.thomas.047@example.com,7000364274,HR Coordinator,2026-06-27
+Finance,Rhea,Reddy,rhea.reddy.048@example.com,7000372193,Finance Associate,2026-06-02
+IT,Aniket,Bose,aniket.bose.049@example.com,7000380112,Frontend Developer,2026-06-05
+HR,Tara,Pillai,tara.pillai.050@example.com,7000388031,People Operations Associate,2026-06-08
+Finance,Aarav,Sengupta,aarav.sengupta.051@example.com,7000395950,Accounts Executive,2026-06-11
+IT,Vivaan,Sharma,vivaan.sharma.052@example.com,7000403869,QA Engineer,2026-06-14
+HR,Aditya,Kulkarni,aditya.kulkarni.053@example.com,7000411788,Training Specialist,2026-06-17
+Finance,Vihaan,Kapoor,vihaan.kapoor.054@example.com,7000419707,Audit Analyst,2026-06-20
+IT,Arjun,Mishra,arjun.mishra.055@example.com,7000427626,DevOps Engineer,2026-07-23
+HR,Reyansh,Sinha,reyansh.sinha.056@example.com,7000435545,HR Executive,2026-07-26
+Finance,Atharv,Gupta,atharv.gupta.057@example.com,7000443464,Accountant,2026-07-01
+IT,Krishna,Das,krishna.das.058@example.com,7000451383,Database Administrator,2026-07-04
+HR,Ishaan,Joshi,ishaan.joshi.059@example.com,7000459302,Talent Acquisition Specialist,2026-07-07
+Finance,Shaurya,Mukherjee,shaurya.mukherjee.060@example.com,7000467221,Financial Analyst,2026-07-10
+IT,Anaya,Nair,anaya.nair.061@example.com,7000475140,Systems Analyst,2026-07-13
+HR,Diya,Malhotra,diya.malhotra.062@example.com,7000483059,Recruiter,2026-07-16
+Finance,Aadhya,Rao,aadhya.rao.063@example.com,7000490978,Payroll Specialist,2026-07-19
+IT,Saanvi,Khan,saanvi.khan.064@example.com,7000498897,Software Engineer,2026-08-22
+HR,Myra,Patel,myra.patel.065@example.com,7000506816,HR Coordinator,2026-08-25
+Finance,Ira,Chatterjee,ira.chatterjee.066@example.com,7000514735,Finance Associate,2026-08-28
+IT,Anvi,Saxena,anvi.saxena.067@example.com,7000522654,Backend Developer,2026-08-03
+HR,Kiara,Desai,kiara.desai.068@example.com,7000530573,People Operations Associate,2026-08-06
+Finance,Riya,Ghosh,riya.ghosh.069@example.com,7000538492,Accounts Executive,2026-08-09
+IT,Aarohi,Mehta,aarohi.mehta.070@example.com,7000546411,Frontend Developer,2026-08-12
+HR,Rohan,Fernandes,rohan.fernandes.071@example.com,7000554330,Training Specialist,2026-08-15
+Finance,Neha,Verma,neha.verma.072@example.com,7000562249,Audit Analyst,2026-08-18
+IT,Kunal,Jain,kunal.jain.073@example.com,7000570168,QA Engineer,2026-09-21
+HR,Pooja,Iyer,pooja.iyer.074@example.com,7000578087,HR Executive,2026-09-24
+Finance,Manav,Menon,manav.menon.075@example.com,7000586006,Accountant,2026-09-27
+IT,Simran,Bhat,simran.bhat.076@example.com,7000593925,DevOps Engineer,2026-09-02
+HR,Yash,Thomas,yash.thomas.077@example.com,7000601844,Talent Acquisition Specialist,2026-09-05
+Finance,Kavya,Reddy,kavya.reddy.078@example.com,7000609763,Financial Analyst,2026-09-08
+IT,Dev,Bose,dev.bose.079@example.com,7000617682,Database Administrator,2026-09-11
+HR,Tanya,Pillai,tanya.pillai.080@example.com,7000625601,Recruiter,2026-09-14
+Finance,Nikhil,Sengupta,nikhil.sengupta.081@example.com,7000633520,Payroll Specialist,2026-09-17
+IT,Sakshi,Sharma,sakshi.sharma.082@example.com,7000641439,Systems Analyst,2026-10-20
+HR,Varun,Kulkarni,varun.kulkarni.083@example.com,7000649358,HR Coordinator,2026-10-23
+Finance,Ishita,Kapoor,ishita.kapoor.084@example.com,7000657277,Finance Associate,2026-10-26
+IT,Rahul,Mishra,rahul.mishra.085@example.com,7000665196,Software Engineer,2026-10-01
+HR,Meera,Sinha,meera.sinha.086@example.com,7000673115,People Operations Associate,2026-10-04
+Finance,Kabir,Gupta,kabir.gupta.087@example.com,7000681034,Accounts Executive,2026-10-07
+IT,Nisha,Das,nisha.das.088@example.com,7000688953,Backend Developer,2026-10-10
+HR,Ritvik,Joshi,ritvik.joshi.089@example.com,7000696872,Training Specialist,2026-10-13
+Finance,Tanvi,Mukherjee,tanvi.mukherjee.090@example.com,7000704791,Audit Analyst,2026-10-16
+IT,Siddharth,Nair,siddharth.nair.091@example.com,7000712710,Frontend Developer,2026-11-19
+HR,Avni,Malhotra,avni.malhotra.092@example.com,7000720629,HR Executive,2026-11-22
+Finance,Harsh,Rao,harsh.rao.093@example.com,7000728548,Accountant,2026-11-25
+IT,Mira,Khan,mira.khan.094@example.com,7000736467,QA Engineer,2026-11-28
+HR,Pranav,Patel,pranav.patel.095@example.com,7000744386,Talent Acquisition Specialist,2026-11-03
+Finance,Aisha,Chatterjee,aisha.chatterjee.096@example.com,7000752305,Financial Analyst,2026-11-06
+IT,Dhruv,Saxena,dhruv.saxena.097@example.com,7000760224,DevOps Engineer,2026-11-09
+HR,Rhea,Desai,rhea.desai.098@example.com,7000768143,Recruiter,2026-11-12
+Finance,Aniket,Ghosh,aniket.ghosh.099@example.com,7000776062,Payroll Specialist,2026-11-15
+IT,Tara,Mehta,tara.mehta.100@example.com,7000783981,Database Administrator,2026-12-18

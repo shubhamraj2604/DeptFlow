@@ -19,6 +19,10 @@ public class Consumer {
     }
     @RabbitListener(queues = "${rabbitmq.queue.name}")
     public void consume(String message) throws IOException {
+         if (message == null || message.isBlank()) {
+        LOGGER.warn("Ignoring empty RabbitMQ message");
+        return;
+        }
         LOGGER.info("Received Message -> {}" , message);
         importService.importEmployees(message);
         LOGGER.info("Message processed successfully: {}" , message);

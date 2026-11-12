@@ -1,5 +1,7 @@
 package com.example.DeptFlow.Service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.example.DeptFlow.Models.ImportJob;
@@ -30,8 +32,11 @@ public class ImportJobErrorService {
     error.setLineNo(lineNo);
     error.setRawLine(rawLine);
     error.setReason(reason);
-
     return importJobErrorRepository.save(error);
 }
+
+    public List<ImportJobError> getErrorById(Long id){
+        return importJobErrorRepository.findAllByImportJob_Id(id);
+    }
 
 }

@@ -23,6 +23,6 @@ public class FileStorageService {
                    file.getInputStream(), 
                     filePath,
                    StandardCopyOption.REPLACE_EXISTING);
-       return filePath.toAbsolutePath().toString();
+       return filename;
     }
 }
