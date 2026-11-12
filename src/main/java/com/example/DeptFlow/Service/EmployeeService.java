@@ -1,5 +1,6 @@
 package com.example.DeptFlow.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -61,5 +62,38 @@ public class EmployeeService {
            newEmployee.setDepartment(department);
         }
         return employeeRepository.save(newEmployee);
+    }
+
+
+    public Employee deactivateEmployeeById(Long id){
+        Optional<Employee> emp = employeeRepository.findById(id);
+        if(emp.isEmpty()){
+            return null;
+        }
+        Employee newEmp = emp.get();
+        newEmp.setStatus("INACTIVATE");
+        newEmp.setDeactivated_at(LocalDateTime.now());
+        return employeeRepository.save(newEmp);
+    }
+
+
+    public void saveAll(List<Employee> employees) {
+        employeeRepository.saveAll(employees);
+    }
+
+
+    public Boolean validEmail(String email) {
+        return employeeRepository.existsByEmail(email);
+    }
+
+
+    public Boolean validPhoneNumber(String phone) {
+        List<Employee> employees = employeeRepository.findAll();
+        for(Employee emp : employees){
+            if(emp.getPhone().equals(phone)){
+                return true;
+            }
+        }
+        return false;
     }
 }
