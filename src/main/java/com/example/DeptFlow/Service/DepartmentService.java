@@ -82,4 +82,13 @@ public class DepartmentService {
         employee.setDepartment(department.get());
         return employeeService.saveEmployee(employee);
     }
+
+
+    public Department deptPresent(String dept_code){
+        Department dept = departmentRepository.findByCode(dept_code);
+        if(dept == null){
+            return null;
+        }
+        return dept;
+    }
 }

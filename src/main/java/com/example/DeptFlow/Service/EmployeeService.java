@@ -75,4 +75,25 @@ public class EmployeeService {
         newEmp.setDeactivated_at(LocalDateTime.now());
         return employeeRepository.save(newEmp);
     }
+
+
+    public void saveAll(List<Employee> employees) {
+        employeeRepository.saveAll(employees);
+    }
+
+
+    public Boolean validEmail(String email) {
+        return employeeRepository.existsByEmail(email);
+    }
+
+
+    public Boolean validPhoneNumber(String phone) {
+        List<Employee> employees = employeeRepository.findAll();
+        for(Employee emp : employees){
+            if(emp.getPhone().equals(phone)){
+                return true;
+            }
+        }
+        return false;
+    }
 }

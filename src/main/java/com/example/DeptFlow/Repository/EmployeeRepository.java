@@ -9,4 +9,6 @@ import com.example.DeptFlow.Models.Employee;
 @Repository 
 public interface EmployeeRepository extends JpaRepository<Employee , Long>{
         List<Employee> findByDepartmentId(Long departmentId);
+        Boolean existsByEmail(String email);
+        Boolean existsByPhone(String phone);
 }

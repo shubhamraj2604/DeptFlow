@@ -1,0 +1,13 @@
+department_code,first_name,last_name,email,phone,designation,date_of_joining
+IT,John,Doe,john.doe@example.com,9876543210,Developer,2026-01-15
+HR,Jane,Doe,jane.doe@example.com,9876543211,Tester,2026-01-16
+IT,Aarav,Sharma,aarav.sharma@example.com,9876543212,Backend Developer,2026-01-20
+HR,Priya,Patel,priya.patel@example.com,9876543213,HR Executive,2026-01-22
+Finance,Rahul,Verma,rahul.verma@example.com,9876543214,Accountant,2026-02-01
+IT,Ananya,Reddy,ananya.reddy@example.com,9876543215,Frontend Developer,2026-02-05
+Finance,Vikram,Singh,vikram.singh@example.com,9876543216,Financial Analyst,2026-02-10
+HR,Meera,Nair,meera.nair@example.com,9876543217,Recruiter,2026-02-12
+IT,Karan,Malhotra,karan.malhotra@example.com,9876543218,QA Engineer,2026-02-18
+Finance,Sneha,Iyer,sneha.iyer@example.com,9876543219,Payroll Specialist,2026-02-20
+HR,Arjun,Das,arjun.das@example.com,9876543220,HR Coordinator,2026-02-25
+IT,Ishita,Gupta,ishita.gupta@example.com,9876543221,DevOps Engineer,2026-03-01

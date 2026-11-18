@@ -13,7 +13,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface DepartmentRepository extends 
        JpaRepository<Department, Long> {
 //    Map<String , Department> departmentRepo;
-
+       Department findByCode(String code);
 //    public DepartmentRepository(){
 //     departmentRepo = new HashMap<>();
 //    }

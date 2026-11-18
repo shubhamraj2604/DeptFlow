@@ -1,0 +1,6 @@
+department_code,first_name,last_name,email,phone,designation,date_of_joining
+IT,Aditi,Kulkarni,aditi.kulkarni@samplemail.net,9123456780,Software Engineer,2026-03-10
+HR,Dev,Chatterjee,dev.chatterjee@workdemo.org,8765432109,Talent Acquisition Specialist,2026-03-12
+Finance,Nisha,Menon,nisha.menon@companytest.in,9988776655,Senior Accountant,2026-03-15
+IT,Kabir,Bose,kabir.bose@devmail.co,7890123456,Database Administrator,2026-03-18
+Finance,Tara,Fernandes,tara.fernandes@financedemo.com,9345612780,Financial Operations Analyst,2026-03-20
